@@ -4,7 +4,7 @@ A local merchant reconciliation console: connect payment evidence to the books, 
 
 **Current state:** working local prototype with authenticated PayPal sandbox reconciliation verified on October 17, 2026. A fictitious USD 100 captured payment and completed USD 25 partial refund were retrieved through Orders v2 and Payments v2. With merchant expected refund zero, the app showed USD 75 observed versus USD 100 expected, a USD 25 gap. With expected refund USD 25, it showed USD 75 observed and expected, with zero difference. The local AI refund investigation selected the order and its exact payment evidence in Firefox.
 
-The separate duplicate-webhook demonstration uses invented fixtures. No real funds or customer data were used. This project has not yet been submitted to the competition.
+The separate duplicate-webhook demonstration uses invented fixtures. No real funds or customer data were used. Submitted to the [PayPal AI Hackathon](https://devpost.com/software/settlementproof) on October 17, 2026. Watch the [2 minute 20 second demonstration](https://www.youtube.com/watch?v=PNmptnpKG3c).
 
 ## Run in under one minute
 
