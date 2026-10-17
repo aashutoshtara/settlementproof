@@ -1,0 +1,64 @@
+{
+  "verified_at_utc": "2026-10-17T09:12:26.810031+00:00",
+  "environment": "PayPal sandbox",
+  "real_funds_used": false,
+  "source": "paypal_sandbox_api",
+  "resources": [
+    {
+      "id": "SANDBOX-CAPTURE-EXAMPLE",
+      "kind": "capture",
+      "order_id": "SANDBOX-ORDER-EXAMPLE",
+      "amount": "100.00",
+      "currency": "USD",
+      "status": "PARTIALLY_REFUNDED"
+    },
+    {
+      "id": "SANDBOX-REFUND-EXAMPLE",
+      "kind": "refund",
+      "order_id": "SANDBOX-ORDER-EXAMPLE",
+      "amount": "25.00",
+      "currency": "USD",
+      "status": "COMPLETED",
+      "capture_id": "SANDBOX-CAPTURE-EXAMPLE"
+    }
+  ],
+  "successful_api_reads": [
+    {
+      "method": "GET",
+      "path": "/v2/checkout/orders/SANDBOX-ORDER-EXAMPLE",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v2/payments/captures/SANDBOX-CAPTURE-EXAMPLE",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v2/payments/refunds/SANDBOX-REFUND-EXAMPLE",
+      "status": 200
+    }
+  ],
+  "mismatch_case": {
+    "merchant_expected_capture": "100.00",
+    "merchant_expected_refund": "0.00",
+    "observed_capture": "100.00",
+    "observed_refund": "25.00",
+    "difference": "-25.00",
+    "verified_in_firefox": true,
+    "ai_investigation_selected_order": true
+  },
+  "control_case": {
+    "expected_minor": 7500,
+    "actual_minor": 7500,
+    "difference_minor": 0,
+    "status": "matched"
+  },
+  "currency": "USD",
+  "notes": [
+    "Fictitious sandbox order and buyer; no real merchant or customer data.",
+    "Observed net is gross captures less refunds before fees, not bank settlement.",
+    "Replayed webhooks remain a separate synthetic-fixture demonstration."
+  ],
+  "redaction": "Historical authenticated sandbox verification. Resource IDs replaced by aliases; fingerprints removed. These aliases cannot be used for API retrieval."
+}

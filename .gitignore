@@ -1,0 +1,9 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+data/sandbox-*
+data/*credentials*
+data/firefox-*.png
+.DS_Store
